@@ -52,3 +52,55 @@ var project = {
     days: 30,
     started: true,
 };
+/*
+문자 or 숫자 들어올 수 있는 변수는
+Union Type 타입 2개 이상 합친 새로운 타입
+*/
+var 회원 = 'kim';
+var 회원들1 = [1, '2', 3];
+var 오브젝트 = { a: '123' };
+// any 타입은 모든 자료형 허용해준다.
+// any는 일반 js 변수
+// any를 사용하게 되면 타입 관련 버그가 나도 안 잡아줌 
+var 이름1;
+이름1 - 1;
+// unKnown 타입 모든 자료형 허용해줌
+var 나이1 = 1;
+// 타입스크립트는 간단한 수학연산도 타입이 맞아야 함.
+var 나이2 = 1;
+나이2 + 1;
+// 실습문제 1. 다음 변수 4개에 타입을 지정해보자.
+var user = 'kim';
+var age = undefined;
+var married = false;
+var 철수 = [user, age, married];
+// 2. 학교라는 변수에 타입을 지정
+var 학교 = {
+    score: [100, 97, 84],
+    teacher: 'Phil',
+    friend: 'John'
+};
+학교.score[4] = false;
+학교.friend = ['Lee', 학교.teacher];
+// 함수 타입
+// 함수에서 void 타입 사용 가능
+// 타입지정된 파라미터는 필수 안 넣어주면 오류
+// 파라미터값 ? :타입 
+// ? 연산자는 들어올수도 있다 라는 뜻 
+// function 함수(x? :number | undefined ) :void 
+function 함수(x) {
+    x * 2;
+}
+함수(5);
+// 함수 실습문제
+// 1. 이름을 파라미터로 입력하면 콘솔창에 출력
+function 이름함수(x) {
+    if (x) {
+        console.log('안녕하세요' + x);
+    }
+    else {
+        console.log('이름이 없습니다.');
+    }
+}
+이름함수();
+// 2. 
