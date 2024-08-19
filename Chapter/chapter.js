@@ -103,3 +103,73 @@ function 이름함수(x) {
     }
 }
 이름함수();
+// 2024 - 08 - 19
+// Type이 아직 하나로 확정되지 않았을 경우 Type Narrowing 써야 함 \
+// Narrowing 방법은 typeof연산자
+// if문 등으로 Narrowing 해줘야 조작이 가능하다. 
+function 내함수(x) {
+    if (typeof x === 'string') {
+        return x + 1;
+    }
+    else {
+        return x + 1;
+    }
+}
+내함수(123);
+// Narrowing으로 판정해주는 문법들
+// typeof 변수
+// in 속성명 in 오브젝트
+// instanceof 부모
+function 내함수1(x) {
+    var array = [];
+    array[0] = x;
+    // assertion문법 
+    // array[0] = x as number;
+    // 왼쪽에 있는 변수를 number로 덮어쓰기 
+}
+내함수1(123);
+/*
+    assertion 문법 용도
+    1. Narrowing할 때 사용
+    2. 무슨 타입이 들어올지 100% 확싱할 때 사용
+
+    let 이름 : string = 'kim';
+    이름 as number;
+    이렇게 사용하면 x
+
+*/
+// Narrowing 복습
+function printVaule(a) {
+    //typeof를 사용해서 타입을 지정
+    if (typeof a === 'string') {
+        console.log('This is a string:' + a);
+    }
+    else {
+        console.log('This is a number:' + a);
+    }
+}
+printVaule('hello');
+printVaule(123);
+// 2. 타입에 따라 다른 메세지 출력하기
+function printMessage(value) {
+    if (typeof value === 'string') {
+        console.log(value);
+    }
+    else {
+        console.log(value);
+    }
+}
+printMessage("Hello");
+printMessage(false);
+// 3.  타입에 따라 다른 연산 수행하기 
+function calculate(input) {
+    if (typeof input === 'number') {
+        return input * 10;
+    }
+    else {
+        return 0;
+    }
+}
+console.log(calculate(2));
+console.log(calculate(null));
+var 동물 = { name: 'kim', age: 20 };

@@ -213,5 +213,61 @@ function 내함수1(x: number|string){
     이름 as number; 
     이렇게 사용하면 x
 
-
 */
+
+// Narrowing 복습
+
+
+function printVaule(a: string|number){
+    //typeof를 사용해서 타입을 지정
+    if(typeof a === 'string'){
+        console.log('This is a string:' + a);
+    }else {
+        console.log('This is a number:' + a);
+    }
+}
+
+printVaule('hello');
+printVaule(123);
+
+
+// 2. 타입에 따라 다른 메세지 출력하기
+
+function printMessage(value: string | boolean){
+    if(typeof value === 'string'){
+        console.log(value);
+    }else {
+        console.log(value);
+    }
+}
+
+printMessage("Hello");
+printMessage(false);
+
+
+// 3.  타입에 따라 다른 연산 수행하기 
+
+function calculate(input: number | null):number {
+    if(typeof input === 'number'){
+        return input * 10;
+    }else {
+        return 0;
+    }
+}
+
+console.log(calculate(2));
+console.log(calculate(null));
+
+
+// type alias
+
+// type 변수 작명  
+// 영어대문자로 시작하거나 뒤에 AnimalType 
+// 같은 이름의 type명 지정 불가능
+type Animal = {name: string, age: number};
+let 동물 :Animal = {name:'kim',age: 20}
+
+
+
+
+
